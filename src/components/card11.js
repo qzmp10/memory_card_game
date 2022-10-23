@@ -7,6 +7,6 @@ export default function Card11(props) {
     const cardClass = `card card${props.index}`
     
     return (
-        <div className={cardClass} onClick={shuffleDeck}> {props.index}</div>
+        <div className={cardClass} onClick={props.userClicked} data-id='unclicked'> {props.index}</div>
     )
 }

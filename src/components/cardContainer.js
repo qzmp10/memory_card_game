@@ -25,19 +25,19 @@ export default function CardContainer(props) {
         return Math.floor(Math.random() * (max - min) + min)
     }
 
-    function shuffleDeck () {
+    function shuffleDeck() {
 
         let newDeck = [];
-        
-        while(newDeck.length !== 12) {
+
+        while (newDeck.length !== 12) {
             let number = getRandomNumber(1, 13);
-            
-            if(newDeck.includes(number)) {
+
+            if (newDeck.includes(number)) {
                 continue;
             } else {
                 newDeck.push(number);
             }
-            
+
         }
 
         console.log(newDeck);
@@ -45,24 +45,42 @@ export default function CardContainer(props) {
         setDeck(newDeck);
     }
 
-    function userClicked() {
-        return true;
+    const userClicked = (e) => {
+        if (e.target.dataset.id === 'unclicked') {
+            shuffleDeck();
+            score.current = score.current + 1;
+            e.target.dataset.id = 'clicked';
+            console.log(score.current);
+        } else {
+            shuffleDeck();
+            resetCards();
+            score.current = 0;
+            console.log(score.current)
+        }
+    }
+
+    function resetCards() {
+        let cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.dataset.id = 'unclicked';
+        })
     }
 
     return (
         <div className='cardContainer'>
-            <Card1 shuffleDeck={shuffleDeck} index={deck[0]} userClicked={userClicked}/>
-            <Card2 shuffleDeck={shuffleDeck} index={deck[1]}/>
-            <Card3 shuffleDeck={shuffleDeck} index={deck[2]}/>
-            <Card4 shuffleDeck={shuffleDeck} index={deck[3]}/>
-            <Card5 shuffleDeck={shuffleDeck} index={deck[4]}/>
-            <Card6 shuffleDeck={shuffleDeck} index={deck[5]}/>
-            <Card7 shuffleDeck={shuffleDeck} index={deck[6]}/>
-            <Card8 shuffleDeck={shuffleDeck} index={deck[7]}/>
-            <Card9 shuffleDeck={shuffleDeck} index={deck[8]}/>
-            <Card10 shuffleDeck={shuffleDeck} index={deck[9]}/>
-            <Card11 shuffleDeck={shuffleDeck} index={deck[10]}/>
-            <Card12 shuffleDeck={shuffleDeck} index={deck[11]}/>
+            <Card1 index={deck[0]} userClicked={userClicked} />
+            <Card2 index={deck[1]} userClicked={userClicked} />
+            <Card3 index={deck[2]} userClicked={userClicked} />
+            <Card4 index={deck[3]} userClicked={userClicked} />
+            <Card5 index={deck[4]} userClicked={userClicked} />
+            <Card6 index={deck[5]} userClicked={userClicked} />
+            <Card7 index={deck[6]} userClicked={userClicked} />
+            <Card8 index={deck[7]} userClicked={userClicked} />
+            <Card9 index={deck[8]} userClicked={userClicked} />
+            <Card10 index={deck[9]} userClicked={userClicked} />
+            <Card11 index={deck[10]} userClicked={userClicked} />
+            <Card12 index={deck[11]} userClicked={userClicked} />
         </div>
     )
 }

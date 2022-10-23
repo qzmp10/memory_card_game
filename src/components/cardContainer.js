@@ -52,6 +52,12 @@ export default function CardContainer(props) {
             if (e.target.parentElement.dataset.id === 'unclicked') {
                 shuffleDeck();
                 score.current = score.current + 1;
+
+                if(score.current > bestScore.current) {
+                    bestScore.current = score.current;
+                    props.bestCallbackFn(bestScore.current);
+                }
+
                 console.log(score.current)
                 props.callbackFn(score.current);
                 e.target.parentElement.dataset.id = 'clicked';
@@ -61,9 +67,9 @@ export default function CardContainer(props) {
                 score.current = 0;
                 props.callbackFn(score.current);
             }
-        } else {
-            
-        }
+        } 
+
+ 
 
     }
 
@@ -76,20 +82,36 @@ export default function CardContainer(props) {
         })
     }
 
+    const hovered = (e) => {
+        if(e.target.classList == 'img' || e.target.classList == 'characterName') {
+            e.target.parentElement.dataset.value = 'hovered';
+        } else {
+            e.target.dataset.value= 'hovered';
+        }
+    }
+
+    const out = (e) => {
+        if(e.target.classList == 'img' || e.target.classList == 'characterName') {
+            e.target.parentElement.dataset.value = null;
+        } else {
+            e.target.dataset.value = null;
+        }
+    }
+
     return (
         <div className='cardContainer'>
-            <Card1 index={deck[0]} userClicked={userClicked} />
-            <Card2 index={deck[1]} userClicked={userClicked} />
-            <Card3 index={deck[2]} userClicked={userClicked} />
-            <Card4 index={deck[3]} userClicked={userClicked} />
-            <Card5 index={deck[4]} userClicked={userClicked} />
-            <Card6 index={deck[5]} userClicked={userClicked} />
-            <Card7 index={deck[6]} userClicked={userClicked} />
-            <Card8 index={deck[7]} userClicked={userClicked} />
-            <Card9 index={deck[8]} userClicked={userClicked} />
-            <Card10 index={deck[9]} userClicked={userClicked} />
-            <Card11 index={deck[10]} userClicked={userClicked} />
-            <Card12 index={deck[11]} userClicked={userClicked} />
+            <Card1 index={deck[0]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card2 index={deck[1]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card3 index={deck[2]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card4 index={deck[3]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card5 index={deck[4]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card6 index={deck[5]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card7 index={deck[6]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card8 index={deck[7]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card9 index={deck[8]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card10 index={deck[9]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card11 index={deck[10]} userClicked={userClicked} hover={hovered} out={out}/>
+            <Card12 index={deck[11]} userClicked={userClicked} hover={hovered} out={out}/>
         </div>
     )
 }

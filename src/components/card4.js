@@ -7,7 +7,7 @@ export default function Card4(props) {
     const cardClass = `card card${props.index}`
 
     return (
-        <div className={cardClass} onClick={props.userClicked} data-id='unclicked'>
+        <div className={cardClass} onClick={props.userClicked} data-id='unclicked' onMouseEnter={props.hover} onMouseLeave={props.out}>
             <img className='img'
                 src='https://static.jojowiki.com/images/thumb/b/ba/latest/20211013051059/Polnareff_SC_Infobox_Anime.png/400px-Polnareff_SC_Infobox_Anime.png'
                 alt='jojo character' />

@@ -103,7 +103,7 @@ body {
 }
 
 .img {
-  width: 87%;
+  width: 90%;
   height: 80%;
   border-radius: .5rem;
   margin-bottom: 1rem;
@@ -113,6 +113,7 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   font-style: italic;
+  text-shadow: 0 0px 9px  rgba(253, 189, 69, 0.774);;
 }
 
 

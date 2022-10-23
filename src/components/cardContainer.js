@@ -19,6 +19,7 @@ export default function CardContainer(props) {
     const score = useRef(0);
     const bestScore = useRef(0);
 
+
     function getRandomNumber(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -47,20 +48,27 @@ export default function CardContainer(props) {
     }
 
     const userClicked = (e) => {
-        if (e.target.dataset.id === 'unclicked') {
-            shuffleDeck();
-            score.current = score.current + 1;
-            props.callbackFn(score.current);
-            e.target.dataset.id = 'clicked';
+        if (e.target.dataset.id === undefined) {
+            if (e.target.parentElement.dataset.id === 'unclicked') {
+                shuffleDeck();
+                score.current = score.current + 1;
+                console.log(score.current)
+                props.callbackFn(score.current);
+                e.target.parentElement.dataset.id = 'clicked';
+            } else if (e.target.parentElement.dataset.id === 'clicked') {
+                shuffleDeck();
+                resetCards();
+                score.current = 0;
+                props.callbackFn(score.current);
+            }
         } else {
-            shuffleDeck();
-            resetCards();
-            score.current = 0;
-            props.callbackFn(score.current);
+            
         }
+
     }
 
     function resetCards() {
+
         let cards = document.querySelectorAll('.card');
 
         cards.forEach(card => {

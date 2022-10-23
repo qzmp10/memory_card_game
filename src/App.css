@@ -125,5 +125,109 @@ body {
   text-shadow: 0 0px 9px black;
 }
 
+@media only screen and (max-width: 600px) {
+  .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    font-size: 0.5rem;
+    gap: 1rem;
+  }
+  .card {
+    height: 8rem;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    border-radius: .5rem;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.692);
+  }
+  .img {
+    width: 80%;
+    height: 60%;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+  }
+
+  .characterName {
+    font-size: .7rem;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0 0px 9px  rgba(253, 189, 69, 0.774);;
+  }
+  
+  .card1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  
+  
+  .card2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  
+  
+  .card3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+  
+  .card4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  
+  
+  .card5 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  
+  
+  .card6 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  
+  .card7 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  
+  
+  .card8 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  
+  
+  .card9 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+  
+  .card10 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  
+  
+  .card11 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  
+  
+  .card12 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+  }
+
+}
+
 
 

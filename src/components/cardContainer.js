@@ -17,6 +17,7 @@ export default function CardContainer(props) {
     const [deck, setDeck] = useState([]);
 
     const score = useRef(0);
+    const bestScore = useRef(0);
 
     function getRandomNumber(min, max) {
         min = Math.ceil(min);
@@ -49,13 +50,13 @@ export default function CardContainer(props) {
         if (e.target.dataset.id === 'unclicked') {
             shuffleDeck();
             score.current = score.current + 1;
+            props.callbackFn(score.current);
             e.target.dataset.id = 'clicked';
-            console.log(score.current);
         } else {
             shuffleDeck();
             resetCards();
             score.current = 0;
-            console.log(score.current)
+            props.callbackFn(score.current);
         }
     }
 

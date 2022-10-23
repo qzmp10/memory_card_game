@@ -7,6 +7,11 @@ export default function Card11(props) {
     const cardClass = `card card${props.index}`
     
     return (
-        <div className={cardClass} onClick={props.userClicked} data-id='unclicked'> {props.index}</div>
+        <div className={cardClass} onClick={props.userClicked} data-id='unclicked'>
+            <img className='img'
+                src='https://static.jojowiki.com/images/1/1f/latest/20220710183109/Pucci_New_Moon_Infobox_Manga.png'
+                alt='jojo character' />
+            <div className='characterName'>Enrico Pucci</div>
+        </div>
     )
 }

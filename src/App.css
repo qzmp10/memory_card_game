@@ -1,11 +1,11 @@
 body {
-  background:  rgb(138, 0, 138);
-  color: rgb(255, 193, 79);
+  background:  rgb(184, 43, 184);
+  color: rgb(253, 189, 69);
 }
 
 .header {
   text-align: center;
-  color: #ffb325;
+  color: #fcad1a;
 }
 
 .advice {
@@ -25,8 +25,9 @@ body {
 }
 
 .card {
-  height: 22rem;
+  height: 24rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgb(0, 0, 0);
@@ -99,6 +100,19 @@ body {
 .card12 {
   grid-column: 6/7;
   grid-row: 2/3;
+}
+
+.img {
+  width: 87%;
+  height: 80%;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+
+.characterName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 

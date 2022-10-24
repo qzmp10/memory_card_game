@@ -226,6 +226,9 @@ body {
     grid-row: 4/5;
   }
 
+  [data-value='hovered'] {
+    
+  }
 
 }
 

@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##  Devices
+Compatible with desktop computers & mobile phones
+
 ## Goals
 This memory card game was part of my self-education through the Odin Project curriculum. The intent was to practice my React skills, and practice the use of hooks & functional components. 
 
